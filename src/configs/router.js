@@ -17,6 +17,10 @@ import Wechat from '../pages/Wechat.vue'
 import Contact from '../pages/Contact.vue'
 //搜索路由 搜索页面
 import Search from '../pages/Search.vue'
+//分类路由 搜索页面
+import Sorter from '../pages/Sorter.vue'
+//个人中心路由 个人中心页面
+import Mine from '../pages/Mine.vue'
 
 
 
@@ -55,13 +59,31 @@ const routes = [
                 meta: {
                     skill: 'jss'
                 }
+            },
+            {
+                path: 'sorter',
+                name: 'sorter',
+                component: Sorter,
+                // 路由传参
+                meta: {
+                    skill: 'pss'
+                }
+            },
+            {
+                path: 'mine',
+                name: 'mine',
+                component: Mine,
+                // 路由传参
+                meta: {
+                    skill: 'ls'
+                }
             }
         ]
     },
     {
         // 就是可以在:id里面接受一个不固定的值
         // 动态路由匹配
-        path: '/detail/:id/:name',
+        path: '/detail',
         name: 'detail',
         component: Detail
     },
@@ -83,4 +105,4 @@ const router = new VueRouter({
     mode: 'hash',
     routes // (缩写) 相当于 routes: routes
 })
-export default router
+export default router 

@@ -7,7 +7,7 @@
         <!---->
         <!---->
         <!-- <h1> -->
-          <a class="nav-logo" href="/"><img src="../assets/header2.png" style="width:35px;height:35px;"></a>
+          <a class="nav-logo" href="/">分类</a>
         <a class="nav-search" title="搜索" @click="toContacts"><img src="../assets/header3.png" class="imgs"></a>
         <!-- </h1> -->
         <!---->
@@ -23,7 +23,6 @@ export default {
   methods: {
     getNews() {
         this.$store.commit("editLoding",true)
-        // console.log(this.$store)
       },
     toContacts() {
       // this.$router.push('/app/contact')
@@ -42,7 +41,7 @@ export default {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 999;
+    z-index: 600;
 }
 img{
   width: 20px;
@@ -65,6 +64,8 @@ a{
   left:47%;
   top:10px;
   float: left;
+  color: #fff;
+  font-size:20px;
 }
 .nav-search{
   position:absolute;

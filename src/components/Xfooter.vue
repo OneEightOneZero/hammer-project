@@ -8,7 +8,7 @@
       <p class="weui-tabbar__label">首页</p>
     </router-link>
     <!-- 编程式导航 -->
-    <a @click="toContact" href="javascript:;" class="weui-tabbar__item">
+    <a @click="toSorter" href="javascript:;" class="weui-tabbar__item">
       <img :src="footer2" alt class="weui-tabbar__icon">
       <p class="weui-tabbar__label">分类</p>
     </a>
@@ -19,7 +19,7 @@
       </span>
       <p class="weui-tabbar__label">购物车</p>
     </a>
-    <a href="javascript:;" class="weui-tabbar__item">
+    <a @click="toMine"  href="javascript:;" class="weui-tabbar__item">
       <img :src="footer4" alt class="weui-tabbar__icon">
       <p class="weui-tabbar__label">个人中心</p>
     </a>
@@ -40,10 +40,15 @@ export default {
     };
   },
   methods: {
-    toContact() {
+    toSorter() {
       // this.$router.push('/app/contact')
       // 根据命名路由来进行跳转
-      this.$router.push({ name: "contact" });
+      this.$router.push({ name: "sorter" });
+    },
+    toMine() {
+      // this.$router.push('/app/contact')
+      // 根据命名路由来进行跳转
+      this.$router.push({ name: "mine" });
     }
   }
 };

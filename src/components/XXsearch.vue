@@ -6,14 +6,13 @@
         <div _ngcontent-c8 _nghost-c9>
           <div _ngcontent-c9 class="search-form">
             <div _ngcontent-c9 class="module-form-row-m">
-              <div _ngcontent-c9 class="form-item" style="margin-top:-6px;">
+              <div _ngcontent-c9 class="form-item">
                 <input
                   _ngcontent-c9
                   class="input-box ng-untouched ng-pristine ng-valid"
                   maxlength="30"
                   type="text"
                   placeholder="请输入要搜索的内容"
-                  
                 >
                 <!---->
               </div>
