@@ -1,7 +1,7 @@
 <template>
   <div _ngcontent-c51 class="ng-tns-c51-66" _nghost-c56>
     <div class="phone">
-      <img :src="item[0].imgurl">
+      <img v-if="item[0] && item[0].imgurl" :src="item[0].imgurl">
     </div>
     <div _ngcontent-c56 class="min-font-12px">
       <section _ngcontent-c56 class="section-floor item-content">
@@ -12,12 +12,12 @@
             </div>
           </div>
           <div _ngcontent-c56 class="title-content">
-            <h4 _ngcontent-c56  v-text="item[0].name"></h4>
+            <h4 _ngcontent-c56 v-if="item[0] && item[0].name" v-text="item[0].name"></h4>
             <p _ngcontent-c56>骁龙 845 处理器 · 光学防抖双摄像头 · 6.17 英寸压力感应屏幕 · 10W快速无线充电功能</p>
             <!---->
             <div _ngcontent-c56 class="price">
               <i>¥</i>
-              <span v-text="item[0].price"></span>
+              <span v-if="item[0] && item[0].price" v-text="item[0].price"></span>
             </div>
             <!---->
             <!---->
