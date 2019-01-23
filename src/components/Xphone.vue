@@ -5,66 +5,16 @@
       <span style="float:right;margin-right:20px;">></span>
     </div>
     <div class="bottom_1">
-      <div class="phone1">
-        <img src="../assets/images/phone_1.webp" alt>
-        <p style="font-weight:900;">坚果R1</p>
-        <p style="color:cyan;font-size:12px;">世代旗舰手机</p>
-        <p style="color:red;">￥4999</p>
-      </div>
-      <div class="phone1">
-        <img src="../assets/images/phone_5.webp" alt>
-        <p style="font-weight:900;">坚果R6s</p>
-        <p style="color:cyan;font-size:12px;">世代旗舰手机</p>
-        <p style="color:red;">￥1999</p>
-      </div>
-      <div class="phone1">
-        <img src="../assets/images/phone_3.webp" alt>
-        <p style="font-weight:900;">坚果Prors 20</p>
-        <p style="color:cyan;font-size:12px;">世代旗舰手机</p>
-        <p style="color:red;">￥3799</p>
-      </div>
-      <div class="phone1">
-        <img src="../assets/images/phone_4.webp" alt>
-        <p style="font-weight:900;">坚果Prors 20</p>
-        <p style="color:cyan;font-size:12px;">世代旗舰手机</p>
-        <p style="color:red;">￥2999</p>
-      </div>
-      <div class="phone1">
-        <img src="../assets/images/phone_1.webp" alt>
-        <p style="font-weight:900;">坚果R1</p>
-        <p style="color:cyan;font-size:12px;">世代旗舰手机</p>
-        <p style="color:red;">￥4999</p>
-      </div>
-      <div class="phone1">
-        <img src="../assets/images/phone_5.webp" alt>
-        <p style="font-weight:900;">坚果R6s</p>
-        <p style="color:cyan;font-size:12px;">世代旗舰手机</p>
-        <p style="color:red;">￥1999</p>
-      </div>
-      <div class="phone1">
-        <img src="../assets/images/phone_3.webp" alt>
-        <p style="font-weight:900;">坚果Prors 20</p>
-        <p style="color:cyan;font-size:12px;">世代旗舰手机</p>
-        <p style="color:red;">￥3799</p>
-      </div>
-      <div class="phone1">
-        <img src="../assets/images/phone_4.webp" alt>
-        <p style="font-weight:900;">坚果Prors 20</p>
-        <p style="color:cyan;font-size:12px;">世代旗舰手机</p>
-        <p style="color:red;">￥2999</p>
-      </div>
-      <div class="phone1">
-        <img src="../assets/images/phone_1.webp" alt>
-        <p style="font-weight:900;">坚果R1</p>
-        <p style="color:cyan;font-size:12px;">世代旗舰手机</p>
-        <p style="color:red;">￥4999</p>
-      </div>
-      <div class="phone1">
-        <img src="../assets/images/phone_5.webp" alt>
-        <p style="font-weight:900;">坚果R6s</p>
-        <p style="color:cyan;font-size:12px;">世代旗舰手机</p>
-        <p style="color:red;">￥1999</p>
-      </div>
+      <router-link
+        :to="`/detail/${n._id}`"
+        class="phone1"
+        v-for="(n,index) in dataArr1"
+        :key="index"
+      >
+        <img :src="n.imgurl">
+        <p style="font-weight:900;" v-text="n.name"></p>
+        <p style="color:red;" v-text="n.price"></p>
+      </router-link>
     </div>
     <div class="imgBot">
       <img src="../assets/images/bottom_1 .webp">
@@ -78,58 +28,24 @@
       <span style="float:right;margin-right:20px;">></span>
     </div>
     <div id="parts" class="bottom_1">
-      <div class="phone1">
-        <img src="../assets/images/pei1.webp" alt>
-        <p style="font-weight:900;">坚果R1</p>
-        <p style="color:red;">￥4999</p>
-      </div>
-      <div class="phone1">
-        <img src="../assets/images/pei2.webp" alt>
-        <p style="font-weight:900;">坚果R6s</p>
-        <p style="color:red;">￥1999</p>
-      </div>
-      <div class="phone1">
-        <img src="../assets/images/pei3.webp" alt>
-        <p style="font-weight:900;">坚果Prors 20</p>
-        <p style="color:red;">￥3799</p>
-      </div>
-      <div class="phone1">
-        <img src="../assets/images/pei4.webp" alt>
-        <p style="font-weight:900;">坚果Prors 20</p>
-        <p style="color:red;">￥2999</p>
-      </div>
-      <div class="phone1">
-        <img src="../assets/images/pei5.webp" alt>
-        <p style="font-weight:900;">坚果R1</p>
-        <p style="color:red;">￥4999</p>
-      </div>
-      <div class="phone1">
-        <img src="../assets/images/pei6.webp" alt>
-        <p style="font-weight:900;">坚果R6s</p>
-        <p style="color:red;">￥1999</p>
-      </div>
-      <div class="phone1">
-        <img src="../assets/images/pei4.webp" alt>
-        <p style="font-weight:900;">坚果Prors 20</p>
-        <p style="color:red;">￥2999</p>
-      </div>
-      <div class="phone1">
-        <img src="../assets/images/pei5.webp" alt>
-        <p style="font-weight:900;">坚果R1</p>
-        <p style="color:red;">￥4999</p>
-      </div>
-      <div class="phone1">
-        <img src="../assets/images/pei6.webp" alt>
-        <p style="font-weight:900;">坚果R6s</p>
-        <p style="color:red;">￥1999</p>
-      </div>
-      <div class="phone1">
-        <img src="../assets/images/pei6.webp" alt>
-        <p style="font-weight:900;">坚果R6s</p>
-        <p style="color:red;">￥1999</p>
-      </div>
+      <router-link
+        :to="`/detail/${n._id}`"
+        class="phone1"
+        v-for="(n,index) in dataArr2"
+        :key="index"
+      >
+        <img :src="n.imgurl">
+        <p style="font-weight:900;" v-text="n.name"></p>
+        <p style="color:red;" v-text="n.price"></p>
+      </router-link>
     </div>
     <div class="imgBot">
+      <img src="../assets/images/pei1.webp">
+      <img src="../assets/images/pei2.webp">
+      <img src="../assets/images/pei3.webp">
+      <img src="../assets/images/pei4.webp">
+      <img src="../assets/images/pei6.webp">
+      <img src="../assets/images/pei5.webp">
       <img src="../assets/images/bottom_1 .webp">
       <img src="../assets/images/bottom_2.webp">
       <img src="../assets/images/bottom_3.webp">
@@ -138,6 +54,29 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      dataArr1: [],
+      dataArr2: []
+    };
+  },
+  methods: {
+    // 获取数据的方法
+    async loadMore() {
+      let data = await this.$axios.get("http://39.96.28.141:3000/goods");
+      this.dataArr1 = this.dataArr1.concat(data.data.data1);
+      this.dataArr2 = this.dataArr2.concat(data.data.data2);
+      // console.log(this.dataArr2);
+    }
+  },
+  //生命周期函数，创建后执行created()函数
+  created() {
+    this.loadMore();
+  }
+};
+</script>
 <style scoped>
 .imgBot img {
   width: 50%;
@@ -171,25 +110,3 @@
   box-sizing: border-box;
 }
 </style>
-<script>
-export default {
-  data() {
-    return {
-      dataArr: []
-    };
-  },
-  methods: {
-    // 获取数据的方法
-    async loadMore() {
-      let data = await this.$axios.get("http://39.96.28.141:3000/goods");
-      this.dataArr = this.dataArr.concat(data.data.data.list);
-      console.log(this.dataArr);
-      
-    }
-  },
-  //生命周期函数，创建后执行created()函数
-  created() {
-    this.loadMore();
-  }
-};
-</script>

@@ -1,7 +1,7 @@
 <template>
   <div _ngcontent-c51 class="ng-tns-c51-66" _nghost-c56>
     <div class="phone">
-      <img src="../assets/phone.jpg">
+      <img :src="item[0].imgurl">
     </div>
     <div _ngcontent-c56 class="min-font-12px">
       <section _ngcontent-c56 class="section-floor item-content">
@@ -12,12 +12,12 @@
             </div>
           </div>
           <div _ngcontent-c56 class="title-content">
-            <h4 _ngcontent-c56>坚果 R1</h4>
+            <h4 _ngcontent-c56  v-text="item[0].name"></h4>
             <p _ngcontent-c56>骁龙 845 处理器 · 光学防抖双摄像头 · 6.17 英寸压力感应屏幕 · 10W快速无线充电功能</p>
             <!---->
             <div _ngcontent-c56 class="price">
               <i>¥</i>
-              <span>3,799.00</span>
+              <span v-text="item[0].price"></span>
             </div>
             <!---->
             <!---->
@@ -88,6 +88,33 @@
   </div>
 </template>
 <script>
+export default {
+  data(){
+    return {
+      item: []
+    };
+  },
+  created() {
+    let Url = location.href;
+    let _id=  Url.split('#')[1].split('/')[2];
+    this.getCurItem(_id);
+  },
+  methods: {
+    // 获取数据的方法
+    async getCurItem(curID) {
+        await this.$axios.get("http://39.96.28.141:3000/good",{
+        params:{
+          getId:curID
+        }
+      }).then((data)=>{
+        this.item = this.item.concat(data.data.data);
+      //  console.log(this.item)
+      });
+      
+    }
+    
+  },
+};
 </script>
 <style scoped>
 .item {

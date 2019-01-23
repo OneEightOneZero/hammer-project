@@ -9,6 +9,8 @@ Vue.use(VueRouter)
 import App from '../App.vue'
 // 详情页路由
 import Detail from '../pages/Detail.vue'
+// 注册页路由
+import Zuce from '../pages/Zuce.vue'
 
 // 二层路由
 // 微信路由 微信页面
@@ -21,6 +23,8 @@ import Search from '../pages/Search.vue'
 import Sorter from '../pages/Sorter.vue'
 //个人中心路由 个人中心页面
 import Mine from '../pages/Mine.vue'
+//购物车
+import Car from '../pages/Car.vue'
 
 
 
@@ -77,15 +81,31 @@ const routes = [
                 meta: {
                     skill: 'ls'
                 }
+            },
+            {
+                path: 'car',
+                name: 'car',
+                component: Car,
+                // 路由传参
+                meta: {
+                    skill: 'ls'
+                }
             }
         ]
     },
     {
         // 就是可以在:id里面接受一个不固定的值
         // 动态路由匹配
-        path: '/detail',
+        path: '/detail/:id',
         name: 'detail',
         component: Detail
+    },
+    {
+        // 就是可以在:id里面接受一个不固定的值
+        // 动态路由匹配
+        path: '/zuce',
+        name: 'zuce',
+        component: Zuce
     },
     // 重定向路由，比如刚进页面的时候，默认跳转的路由位置
     {
