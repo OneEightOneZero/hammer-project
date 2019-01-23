@@ -1,18 +1,18 @@
 <template>
   <div _ngcontent-c59 class="category-wrapper">
     <!---->
-    <category-container _ngcontent-c59 _nghost-c60>
+    <div _ngcontent-c59 _nghost-c60>
       <div _ngcontent-c60 class="section-floor" id="0_content">
         <!---->
-        <category-title _ngcontent-c60>
+        <div _ngcontent-c60>
           <div class="title-header box-line">
             <div class="title-wrapper">
               <h2>手机</h2>
             </div>
           </div>
-        </category-title>
+        </div>
         <!---->
-        <category-banner _ngcontent-c60 _nghost-c61>
+        <div _ngcontent-c60 _nghost-c61>
           <div _ngcontent-c61 class="floor-image-container box-line">
             <a _ngcontent-c61 href="javascript:;">
               <div _ngcontent-c61 class="image-shadow"></div>
@@ -25,9 +25,9 @@
               </div>
             </a>
           </div>
-        </category-banner>
+        </div>
         <!---->
-        <category-oneone _ngcontent-c60 _nghost-c62>
+        <div _ngcontent-c60 _nghost-c62>
           <!---->
           <div _ngcontent-c62 class="category-oneone min-font-12px">
             <!---->
@@ -40,9 +40,9 @@
                 >
                 <span _ngcontent-c62 class="title">坚果 Pro 2S</span>
                 <span _ngcontent-c62 class="promotion-tag-container">
-                  <promotion-tag _ngcontent-c62 _nghost-c58>
+                  <div _ngcontent-c62 _nghost-c58>
                     <!---->
-                  </promotion-tag>
+                  </div>
                 </span>
                 <div _ngcontent-c62 class="show-detail"></div>
               </a>
@@ -60,32 +60,32 @@
                 >
                 <span _ngcontent-c62 class="title">坚果 R1</span>
                 <span _ngcontent-c62 class="promotion-tag-container">
-                  <promotion-tag _ngcontent-c62 _nghost-c58>
+                  <div _ngcontent-c62 _nghost-c58>
                     <!---->
-                  </promotion-tag>
+                  </div>
                 </span>
                 <div _ngcontent-c62 class="show-detail"></div>
               </a>
             </div>
             <!---->
           </div>
-        </category-oneone>
+        </div>
         <!---->
         <!---->
       </div>
-    </category-container>
-    <category-container _ngcontent-c59 _nghost-c60>
+    </div>
+    <div _ngcontent-c59 _nghost-c60>
       <div _ngcontent-c60 class="section-floor" id="1_content">
         <!---->
-        <category-title _ngcontent-c60>
+        <div _ngcontent-c60>
           <div class="title-header box-line">
             <div class="title-wrapper">
               <h2>壳套膜</h2>
             </div>
           </div>
-        </category-title>
+        </div>
         <!---->
-        <category-banner _ngcontent-c60 _nghost-c61>
+        <div _ngcontent-c60 _nghost-c61>
           <div _ngcontent-c61 class="floor-image-container box-line">
             <a _ngcontent-c61 href="javascript:;">
               <div _ngcontent-c61 class="image-shadow"></div>
@@ -98,10 +98,10 @@
               </div>
             </a>
           </div>
-        </category-banner>
+        </div>
         <!---->
         <!---->
-        <category-onetwo _ngcontent-c60 _nghost-c63>
+        <div _ngcontent-c60 _nghost-c63>
           <div _ngcontent-c63 class="category-onetwo-container">
             <!---->
             <div _ngcontent-c63 class="category-onetwo box-line line-vertical">
@@ -165,22 +165,22 @@
               <!---->
             </div>
           </div>
-        </category-onetwo>
+        </div>
         <!---->
       </div>
-    </category-container>
-    <category-container _ngcontent-c59 _nghost-c60>
+    </div>
+    <div _ngcontent-c59 _nghost-c60>
       <div _ngcontent-c60 class="section-floor" id="2_content">
         <!---->
-        <category-title _ngcontent-c60>
+        <div _ngcontent-c60>
           <div class="title-header box-line">
             <div class="title-wrapper">
               <h2>充电线材</h2>
             </div>
           </div>
-        </category-title>
+        </div>
         <!---->
-        <category-banner _ngcontent-c60 _nghost-c61>
+        <div _ngcontent-c60 _nghost-c61>
           <div _ngcontent-c61 class="floor-image-container box-line">
             <a _ngcontent-c61 href="javascript:;">
               <div _ngcontent-c61 class="image-shadow"></div>
@@ -193,11 +193,11 @@
               </div>
             </a>
           </div>
-        </category-banner>
+        </div>
         <!---->
         <!---->
         <!---->
-        <category-onethree _ngcontent-c60 _nghost-c64>
+        <div _ngcontent-c60 _nghost-c64>
           <div _ngcontent-c64 class="category-onethree-container floor-container min-font-12px">
             <!---->
             <div _ngcontent-c64 class="category-onethree">
@@ -345,21 +345,21 @@
               <!---->
             </div>
           </div>
-        </category-onethree>
+        </div>
       </div>
-    </category-container>
-    <category-container _ngcontent-c59 _nghost-c60>
+    </div>
+    <div _ngcontent-c59 _nghost-c60>
       <div _ngcontent-c60 class="section-floor" id="3_content">
         <!---->
-        <category-title _ngcontent-c60>
+        <div _ngcontent-c60>
           <div class="title-header box-line">
             <div class="title-wrapper">
               <h2>耳机音箱</h2>
             </div>
           </div>
-        </category-title>
+        </div>
         <!---->
-        <category-banner _ngcontent-c60 _nghost-c61>
+        <div _ngcontent-c60 _nghost-c61>
           <div _ngcontent-c61 class="floor-image-container box-line">
             <a _ngcontent-c61 href="javascript:;">
               <div _ngcontent-c61 class="image-shadow"></div>
@@ -372,11 +372,11 @@
               </div>
             </a>
           </div>
-        </category-banner>
+        </div>
         <!---->
         <!---->
         <!---->
-        <category-onethree _ngcontent-c60 _nghost-c64>
+        <div _ngcontent-c60 _nghost-c64>
           <div _ngcontent-c64 class="category-onethree-container floor-container min-font-12px">
             <!---->
             <div _ngcontent-c64 class="category-onethree">
@@ -476,21 +476,21 @@
               <!---->
             </div>
           </div>
-        </category-onethree>
+        </div>
       </div>
-    </category-container>
-    <category-container _ngcontent-c59 _nghost-c60>
+    </div>
+    <div _ngcontent-c59 _nghost-c60>
       <div _ngcontent-c60 class="section-floor" id="4_content">
         <!---->
-        <category-title _ngcontent-c60>
+        <div _ngcontent-c60>
           <div class="title-header box-line">
             <div class="title-wrapper">
               <h2>畅呼吸</h2>
             </div>
           </div>
-        </category-title>
+        </div>
         <!---->
-        <category-banner _ngcontent-c60 _nghost-c61>
+        <div _ngcontent-c60 _nghost-c61>
           <div _ngcontent-c61 class="floor-image-container box-line">
             <a _ngcontent-c61 href="javascript:;">
               <div _ngcontent-c61 class="image-shadow"></div>
@@ -503,10 +503,10 @@
               </div>
             </a>
           </div>
-        </category-banner>
+        </div>
         <!---->
         <!---->
-        <category-onetwo _ngcontent-c60 _nghost-c63>
+        <div _ngcontent-c60 _nghost-c63>
           <div _ngcontent-c63 class="category-onetwo-container">
             <!---->
             <div _ngcontent-c63 class="category-onetwo box-line line-vertical">
@@ -600,22 +600,22 @@
               <!---->
             </div>
           </div>
-        </category-onetwo>
+        </div>
         <!---->
       </div>
-    </category-container>
-    <category-container _ngcontent-c59 _nghost-c60>
+    </div>
+    <div _ngcontent-c59 _nghost-c60>
       <div _ngcontent-c60 class="section-floor" id="5_content">
         <!---->
-        <category-title _ngcontent-c60>
+        <div _ngcontent-c60>
           <div class="title-header box-line">
             <div class="title-wrapper">
               <h2>箱包类</h2>
             </div>
           </div>
-        </category-title>
+        </div>
         <!---->
-        <category-banner _ngcontent-c60 _nghost-c61>
+        <div _ngcontent-c60 _nghost-c61>
           <div _ngcontent-c61 class="floor-image-container box-line">
             <a _ngcontent-c61 href="javascript:;">
               <div _ngcontent-c61 class="image-shadow"></div>
@@ -628,10 +628,10 @@
               </div>
             </a>
           </div>
-        </category-banner>
+        </div>
         <!---->
         <!---->
-        <category-onetwo _ngcontent-c60 _nghost-c63>
+        <div _ngcontent-c60 _nghost-c63>
           <div _ngcontent-c63 class="category-onetwo-container">
             <!---->
             <div _ngcontent-c63 class="category-onetwo box-line line-vertical">
@@ -665,22 +665,22 @@
               <!---->
             </div>
           </div>
-        </category-onetwo>
+        </div>
         <!---->
       </div>
-    </category-container>
-    <category-container _ngcontent-c59 _nghost-c60>
+    </div>
+    <div _ngcontent-c59 _nghost-c60>
       <div _ngcontent-c60 class="section-floor" id="6_content">
         <!---->
-        <category-title _ngcontent-c60>
+        <div _ngcontent-c60>
           <div class="title-header box-line">
             <div class="title-wrapper">
               <h2>鞋服</h2>
             </div>
           </div>
-        </category-title>
+        </div>
         <!---->
-        <category-banner _ngcontent-c60 _nghost-c61>
+        <div _ngcontent-c60 _nghost-c61>
           <div _ngcontent-c61 class="floor-image-container box-line">
             <a _ngcontent-c61 href="javascript:;">
               <div _ngcontent-c61 class="image-shadow"></div>
@@ -693,11 +693,11 @@
               </div>
             </a>
           </div>
-        </category-banner>
+        </div>
         <!---->
         <!---->
         <!---->
-        <category-onethree _ngcontent-c60 _nghost-c64>
+        <div _ngcontent-c60 _nghost-c64>
           <div _ngcontent-c64 class="category-onethree-container floor-container min-font-12px">
             <!---->
             <div _ngcontent-c64 class="category-onethree">
@@ -797,21 +797,21 @@
               <!---->
             </div>
           </div>
-        </category-onethree>
+        </div>
       </div>
-    </category-container>
-    <category-container _ngcontent-c59 _nghost-c60>
+    </div>
+    <div _ngcontent-c59 _nghost-c60>
       <div _ngcontent-c60 class="section-floor" id="7_content">
         <!---->
-        <category-title _ngcontent-c60>
+        <div _ngcontent-c60>
           <div class="title-header box-line">
             <div class="title-wrapper">
               <h2>文具</h2>
             </div>
           </div>
-        </category-title>
+        </div>
         <!---->
-        <category-banner _ngcontent-c60 _nghost-c61>
+        <div _ngcontent-c60 _nghost-c61>
           <div _ngcontent-c61 class="floor-image-container box-line">
             <a _ngcontent-c61 href="javascript:;">
               <div _ngcontent-c61 class="image-shadow"></div>
@@ -824,10 +824,10 @@
               </div>
             </a>
           </div>
-        </category-banner>
+        </div>
         <!---->
         <!---->
-        <category-onetwo _ngcontent-c60 _nghost-c63>
+        <div _ngcontent-c60 _nghost-c63>
           <div _ngcontent-c63 class="category-onetwo-container">
             <!---->
             <div _ngcontent-c63 class="category-onetwo box-line line-vertical">
@@ -861,22 +861,22 @@
               <!---->
             </div>
           </div>
-        </category-onetwo>
+        </div>
         <!---->
       </div>
-    </category-container>
-    <category-container _ngcontent-c59 _nghost-c60>
+    </div>
+    <div _ngcontent-c59 _nghost-c60>
       <div _ngcontent-c60 class="section-floor" id="8_content">
         <!---->
-        <category-title _ngcontent-c60>
+        <div _ngcontent-c60>
           <div class="title-header box-line">
             <div class="title-wrapper">
               <h2>品牌精选</h2>
             </div>
           </div>
-        </category-title>
+        </div>
         <!---->
-        <category-banner _ngcontent-c60 _nghost-c61>
+        <div _ngcontent-c60 _nghost-c61>
           <div _ngcontent-c61 class="floor-image-container box-line">
             <a _ngcontent-c61 href="javascript:;">
               <div _ngcontent-c61 class="image-shadow"></div>
@@ -889,11 +889,11 @@
               </div>
             </a>
           </div>
-        </category-banner>
+        </div>
         <!---->
         <!---->
         <!---->
-        <category-onethree _ngcontent-c60 _nghost-c64>
+        <div _ngcontent-c60 _nghost-c64>
           <div _ngcontent-c64 class="category-onethree-container floor-container min-font-12px">
             <!---->
             <div _ngcontent-c64 class="category-onethree">
@@ -1041,21 +1041,21 @@
               <!---->
             </div>
           </div>
-        </category-onethree>
+        </div>
       </div>
-    </category-container>
-    <category-container _ngcontent-c59 _nghost-c60>
+    </div>
+    <div _ngcontent-c59 _nghost-c60>
       <div _ngcontent-c60 class="section-floor" id="9_content">
         <!---->
-        <category-title _ngcontent-c60>
+        <div _ngcontent-c60>
           <div class="title-header box-line">
             <div class="title-wrapper">
               <h2>图书</h2>
             </div>
           </div>
-        </category-title>
+        </div>
         <!---->
-        <category-banner _ngcontent-c60 _nghost-c61>
+        <div _ngcontent-c60 _nghost-c61>
           <div _ngcontent-c61 class="floor-image-container box-line">
             <a _ngcontent-c61 href="javascript:;">
               <div _ngcontent-c61 class="image-shadow"></div>
@@ -1068,10 +1068,10 @@
               </div>
             </a>
           </div>
-        </category-banner>
+        </div>
         <!---->
         <!---->
-        <category-onetwo _ngcontent-c60 _nghost-c63>
+        <div _ngcontent-c60 _nghost-c63>
           <div _ngcontent-c63 class="category-onetwo-container">
             <!---->
             <div _ngcontent-c63 class="category-onetwo box-line line-vertical">
@@ -1135,10 +1135,10 @@
               <!---->
             </div>
           </div>
-        </category-onetwo>
+        </div>
         <!---->
       </div>
-    </category-container>
+    </div>
   </div>
 </template>
 <script>
