@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <div class="MainCar" v-for="aa in shop" :key="aa">
+    <div class="MainCar" v-for="(aa,index) in shop" :key="index">
       <input style="width:20px;height:20px;" type="checkbox">
       <img :src="aa.imgurl" width="80px">
       <div class="MainCarBox">
@@ -58,7 +58,7 @@ export default {
     async getshop() {
       let data = await this.$axios.get("http://39.96.28.141:3000/shopCar");
       this.shop = this.shop.concat(data.data);
-      console.log(this.shop);
+      // console.log(this.shop);
     }
   },
   //生命周期函数，创建后执行created()函数
@@ -147,7 +147,7 @@ export default {
   height: 50px;
   background: linear-gradient(to top, #ccc, #fff);
   position: fixed;
-  bottom: 50px;
+  bottom: 66px;
 }
 .buy input {
   margin: 20px 0 0 20px;
