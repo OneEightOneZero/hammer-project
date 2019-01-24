@@ -8,7 +8,6 @@
         <!---->
         <!-- <h1> -->
           <a class="nav-logo" href="/">Car</a>
-        <a class="nav-search">删除选中</a>
         <!-- </h1> -->
         <!---->
         <!---->

@@ -10,12 +10,13 @@
       </div>
     </div>
     <div class="buy">
-      <input style="width:20px;height:20px;" type="checkbox">
+      <input style="width:20px;height:20px;" type="checkbox" @click="allmoney" :ref="'allchecks'">
       <p>
         合计：
         <span v-text="totalPrice"></span>
       </p>
       <h6>免邮费</h6>
+      <div class="del" @click="delItem">删除</div>
       <div>去结算</div>
     </div>
     <div class="recommend">
@@ -50,7 +51,9 @@ export default {
       shop: [],
       totalPrice: 0,
       allCheck: false,
-      listCheck: []
+      listCheck: [],
+      active: true,
+      checkNum: 0
     };
   },
   methods: {
@@ -67,7 +70,6 @@ export default {
         }
       });
       this.shop = this.shop.concat(data.data);
-
     },
     autoLogin() {
       // console.log(666);
@@ -90,16 +92,47 @@ export default {
         fn[res.data.status]();
       });
     },
-    iptcheck(idx){
+    delItem(){
+      for(let j = this.shop.length-1;j>=0;j--){
+        if(this.$refs[j][0].checked){
+          console.log(this.shop[j].guid);
+        }
+      }
+    },
+    iptcheck(idx) {
       console.log(this.$refs[idx][0].checked);
       console.log(this.shop);
-      for(let i =0;i<=this.shop.length;i++){
-        if(i == idx){
-          if(this.$refs[idx][0].checked){
+      for (let i = 0; i <= this.shop.length; i++) {
+        if (i == idx) {
+          if (this.$refs[idx][0].checked) {
             this.totalPrice += this.shop[i].num * this.shop[i].price;
-          }else{
+            this.checkNum++;
+          } else {
             this.totalPrice -= this.shop[i].num * this.shop[i].price;
+            this.checkNum--;
           }
+        }
+        if (this.checkNum == this.shop.length) {
+          this.$refs.allchecks.checked = true;
+        }else{
+          this.$refs.allchecks.checked = false;
+        }
+      }
+    },
+    allmoney() {
+      console.log(this.$refs.allchecks.checked);
+      if (this.$refs.allchecks.checked) {
+        this.checkNum = this.shop.length;
+        this.totalPrice = 0;
+        for (let i = 0; i <= this.shop.length-1; i++) {
+          this.$refs[i][0].checked = true;
+          this.totalPrice += this.shop[i].num * this.shop[i].price;
+        }
+      } else {
+        this.checkNum = 0;
+        this.totalPrice = 0;
+        for (let i = 0; i <= this.shop.length-1; i++) {
+          this.$refs[i][0].checked = false;
         }
       }
     }
@@ -217,16 +250,21 @@ export default {
   color: rgb(255, 7, 181);
 }
 .buy div {
-  width: 90px;
+  width: 16%;
   height: 40px;
   position: absolute;
   top: 5px;
-  right: 4%;
+  right: 2%;
   font-size: 16px;
   text-align: center;
   line-height: 43px;
   color: #fff;
   background: linear-gradient(to top, cyan, skyblue);
   border-radius: 5px;
+}
+.buy .del{
+  background: red;
+  top: 5px;
+  right: 19%;
 }
 </style>
