@@ -159,7 +159,7 @@ export default {
   height: 50px;
   background: linear-gradient(to top, #ccc, #fff);
   position: fixed;
-  bottom: 50px;
+  bottom: 66px;
 }
 .buy input {
   margin: 20px 0 0 20px;

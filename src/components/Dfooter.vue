@@ -65,7 +65,7 @@ export default {
           addAccount: "13633333333"
         })
       }).then(res => {
-        console.log(res);
+        // console.log(res);
       });
     }
   }

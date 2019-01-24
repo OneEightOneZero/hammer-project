@@ -5,7 +5,10 @@
         <!-- <Xpanel /> -->
         <!-- <Xgallery /> -->
         <!-- <Xloading /> -->
+<<<<<<< HEAD
         <!-- <Xxiala /> -->
+=======
+>>>>>>> 45119e6978ea92beaedf2ac497711d0a86582684
     </div>
 </template>
 <script>

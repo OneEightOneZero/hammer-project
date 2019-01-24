@@ -37,11 +37,18 @@
     </form>
     <div class="login" style="padding-left:80px;
     box-sizing: border-box;">
-        <span style="login_go">我已经有账号了：<a style="#58bc58" href="javascript:;">跳往登录页</a></span>
+        <span style="login_go">我已经有账号了：<a style="#58bc58" href="javascript:;" @click="getLogin">跳往登录页</a></span>
     </div>
   </div>
 </template>
 <script>
+export default {
+  methods: {
+    getLogin() {
+      this.$router.push({ name: "login" });
+    }
+  }
+};
 </script>
 <style scoped>
 .login{
