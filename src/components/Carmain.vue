@@ -1,7 +1,7 @@
 <template>
   <div class="main">
-    <div class="MainCar" v-for="(aa,index) in shop" :key="index" >
-      <input style="width:20px;height:20px;" type="checkbox" :data-id="index" :ref="`ipt`">
+    <div class="MainCar" v-for="(aa,index) in shop" :key="index">
+      <input style="width:20px;height:20px;" type="checkbox" :ref="index" @click="iptcheck(index)">
       <img :src="aa.imgurl" width="80px">
       <div class="MainCarBox">
         <h2 v-text="aa.name"></h2>
@@ -13,7 +13,7 @@
       <input style="width:20px;height:20px;" type="checkbox">
       <p>
         合计：
-        <span></span>
+        <span v-text="totalPrice"></span>
       </p>
       <h6>免邮费</h6>
       <div>去结算</div>
@@ -48,7 +48,10 @@ export default {
     return {
       dataArr2: [],
       shop: [],
-      inputId:[]
+      totalPrice: 0,
+      allCheck: false,
+      listCheck: [],
+      allInputArr: []
     };
   },
   methods: {
@@ -65,7 +68,6 @@ export default {
         }
       });
       this.shop = this.shop.concat(data.data);
-      // console.log(this.shop);
     },
     autoLogin() {
       // console.log(666);
@@ -80,30 +82,25 @@ export default {
         console.log(res.data.curuser);
         console.log(res.data.status);
         let fn = {
-          true: () => {
-            this.getshop(res.data.curuser);
+          true: async () => {
+            let curshop = await this.getshop(res.data.curuser);
+            this.allInputArr = this.allInputArr.concat(curshop);
           },
           false: () => {}
         };
         fn[res.data.status]();
       });
     },
+    iptcheck(idx){
+      console.log(this.$refs[idx][0].checked);
+    }
   },
   //生命周期函数，创建后执行created()函数
   created() {
     (async () => {
       this.loadMore();
       await this.autoLogin();
-      let totalPrice = 0;
-      for (let i = 0; i < this.shop.length; i++) {
-        totalPrice =
-          totalPrice + (this.shop[i].num * 1 + this.shop[i].price * 1);
-      }
     })();
-  },
-  mounted(){
-    console.log(this.$refs);
-    this.inputId = this.inputId.concat(this.$refs.ipt);
   }
 };
 </script>
