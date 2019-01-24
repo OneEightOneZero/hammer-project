@@ -1,16 +1,18 @@
 <template>
   <div class="main">
-    <div class="MainCar" v-for="(aa,index) in shop" :key="index">
-      <input style="width:20px;height:20px;" type="checkbox">
+    <div class="MainCar" v-for="(aa,index) in shop" :key="index" >
+      <input style="width:20px;height:20px;" type="checkbox" :data-id="index" :ref="`ipt`">
       <img :src="aa.imgurl" width="80px">
       <div class="MainCarBox">
         <h2 v-text="aa.name"></h2>
-        <p v-text="`￥${aa.price}`"></p><span class="munc" v-text="`*${aa.num}`"></span>
+        <p v-text="`￥${aa.price}`"></p>
+        <span class="munc" v-text="`*${aa.num}`"></span>
       </div>
     </div>
     <div class="buy">
       <input style="width:20px;height:20px;" type="checkbox">
-      <p>合计：
+      <p>
+        合计：
         <span></span>
       </p>
       <h6>免邮费</h6>
@@ -45,7 +47,8 @@ export default {
   data() {
     return {
       dataArr2: [],
-      shop: []
+      shop: [],
+      inputId:[]
     };
   },
   methods: {
@@ -55,31 +58,60 @@ export default {
       this.dataArr2 = this.dataArr2.concat(data.data.data2);
       // console.log(this.dataArr2);
     },
-    async getshop() {
-      let data = await this.$axios.get("http://39.96.28.141:3000/shopCar");
+    async getshop(users) {
+      let data = await this.$axios.get("http://39.96.28.141:3000/shopCar", {
+        params: {
+          users
+        }
+      });
       this.shop = this.shop.concat(data.data);
       // console.log(this.shop);
-    }
+    },
+    autoLogin() {
+      // console.log(666);
+      // console.log(localStorage.getItem("token"));
+      this.$axios({
+        method: "post",
+        url: "http://39.96.28.141:3000/users/autoLogin",
+        data: this.$qs.stringify({
+          isToken: localStorage.getItem("token")
+        })
+      }).then(res => {
+        console.log(res.data.curuser);
+        console.log(res.data.status);
+        let fn = {
+          true: () => {
+            this.getshop(res.data.curuser);
+          },
+          false: () => {}
+        };
+        fn[res.data.status]();
+      });
+    },
   },
   //生命周期函数，创建后执行created()函数
   created() {
-    this.loadMore();
-    (async()=>{
-      await this.getshop();
+    (async () => {
+      this.loadMore();
+      await this.autoLogin();
       let totalPrice = 0;
-      for(let i=0;i<this.shop.length;i++){
-        totalPrice = totalPrice + (this.shop[i].num*1 + this.shop[i].price*1);
+      for (let i = 0; i < this.shop.length; i++) {
+        totalPrice =
+          totalPrice + (this.shop[i].num * 1 + this.shop[i].price * 1);
       }
-      console.log(totalPrice);
-    })()
-  }  
+    })();
+  },
+  mounted(){
+    console.log(this.$refs);
+    this.inputId = this.inputId.concat(this.$refs.ipt);
+  }
 };
 </script>
 <style scoped>
-.munc{
+.munc {
   position: absolute;
   bottom: 17%;
-  right:40%;
+  right: 40%;
 }
 .main {
   margin-top: 50px;
@@ -116,10 +148,10 @@ export default {
   left: 50px;
   font-family: "楷体";
   font-weight: 999;
-  
-    overflow: hidden;
-    text-overflow: ellipsis;
-    word-break: break-word;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
   white-space: nowrap;
 }
 .main .MainCar .MainCarBox p {

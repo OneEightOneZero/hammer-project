@@ -37,30 +37,9 @@ export default {
     Xxiala
   },
   methods: {
-    autoLogin() {
-      console.log(localStorage.getItem("token"));
-      this.$axios({
-        method: "post",
-        url: "http://39.96.28.141:3000/users/autoLogin",
-        data: this.$qs.stringify({
-          isToken:localStorage.getItem("token")
-        })
-      }).then(res => {
-        console.log(res.data.status);
-        let fn = {
-          true: () => {
-            console.log(666);
-          },
-          false: () => {
-            this.$router.push({ name: "login" });
-          }
-        };
-        fn[res.data.status]();
-      });
-    }
   },
   created() {
-    this.autoLogin();
+    // this.autoLogin();
   }
 };
 </script>

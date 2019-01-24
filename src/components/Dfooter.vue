@@ -10,7 +10,7 @@
       </a>
     </li>
     <!---->
-    <li _ngcontent-c50 @click="getxinxi">
+    <li _ngcontent-c50 @click="autoLogin">
       <span _ngcontent-c50 class="box-border">
         <a _ngcontent-c50>加入购物车</a>
       </span>
@@ -52,7 +52,8 @@ export default {
           //  console.log(this.item)
         });
     },
-    getxinxi() {
+    getxinxi(names) {
+      // console.log(11)
       this.$axios({
         method: "post",
         url: "http://39.96.28.141:3000/shopCar/addItem",
@@ -62,10 +63,36 @@ export default {
           addPrice: this.item[0].price,
           addGuid: this.item[0].guid,
           qty: 1,
-          addAccount: "13633333333"
+          addAccount: names
         })
       }).then(res => {
-        // console.log(res);
+        console.log(res);
+      });
+    },
+    autoLogin() {
+      // console.log(666);
+      // console.log(localStorage.getItem("token"));
+      this.$axios({
+        method: "post",
+        url: "http://39.96.28.141:3000/users/autoLogin",
+        data: this.$qs.stringify({
+          isToken:localStorage.getItem("token")
+        })
+      }).then(res => {
+        console.log(res.data.status);
+        let fn = {
+          true: () => {
+            this.getxinxi(res.data.curuser);
+            // console.log(666);
+          },
+          false: () => {
+            let mes = confirm("请先登录！");
+            if(mes){
+            this.$router.push({ name: "login" });
+            }
+          }
+        };
+        fn[res.data.status]();
       });
     }
   }
