@@ -2,10 +2,6 @@
     <div>
         <Mheader/>
         <Muser />
-        <!-- <Xpanel /> -->
-        <!-- <Xgallery /> -->
-        <!-- <Xloading /> -->
-        <Xxiala />
     </div>
 </template>
 <script>
