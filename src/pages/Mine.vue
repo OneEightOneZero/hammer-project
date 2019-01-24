@@ -5,7 +5,6 @@
         <!-- <Xpanel /> -->
         <!-- <Xgallery /> -->
         <!-- <Xloading /> -->
-        <Xxiala />
     </div>
 </template>
 <script>
