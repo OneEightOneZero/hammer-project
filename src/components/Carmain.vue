@@ -50,8 +50,7 @@ export default {
       shop: [],
       totalPrice: 0,
       allCheck: false,
-      listCheck: [],
-      allInputArr: []
+      listCheck: []
     };
   },
   methods: {
@@ -68,6 +67,7 @@ export default {
         }
       });
       this.shop = this.shop.concat(data.data);
+
     },
     autoLogin() {
       // console.log(666);
@@ -83,8 +83,7 @@ export default {
         console.log(res.data.status);
         let fn = {
           true: async () => {
-            let curshop = await this.getshop(res.data.curuser);
-            this.allInputArr = this.allInputArr.concat(curshop);
+            this.getshop(res.data.curuser);
           },
           false: () => {}
         };
@@ -93,6 +92,16 @@ export default {
     },
     iptcheck(idx){
       console.log(this.$refs[idx][0].checked);
+      console.log(this.shop);
+      for(let i =0;i<=this.shop.length;i++){
+        if(i == idx){
+          if(this.$refs[idx][0].checked){
+            this.totalPrice += this.shop[i].num * this.shop[i].price;
+          }else{
+            this.totalPrice -= this.shop[i].num * this.shop[i].price;
+          }
+        }
+      }
     }
   },
   //生命周期函数，创建后执行created()函数
