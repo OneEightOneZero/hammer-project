@@ -14,51 +14,72 @@
           >中国</span>
         </li>
         <li>
-            <span class="phone">+86</span>
-            <input class="numbery" type="text" placeholder="手机号">
+          <span class="phone">+86</span>
+          <input class="numbery" type="text" placeholder="手机号" v-model="numbers">
         </li>
         <li>
-            <input type="text" placeholder="短信验证码" class="yzm">
-            <button class="getm">获取验证码</button>
+          <input type="text" placeholder="短信验证码" class="yzm">
+          <button class="getm">获取验证码</button>
         </li>
         <li>
-            <input type="password" placeholder="密码" class="numbery">
+          <input type="password" placeholder="密码" class="numbery" v-model="mima">
         </li>
         <li>
-            <input type="password" placeholder="确认密码" class="numbery">
+          <input type="password" placeholder="确认密码" class="numbery">
         </li>
         <li>
-            <button class="sign">点击查看协议</button>
+          <button class="sign">点击查看协议</button>
         </li>
         <li>
-            <button class="sign">同意协议并注册</button>
+          <button class="sign" @click="register">同意协议并注册</button>
         </li>
       </ul>
     </form>
     <div class="login" style="padding-left:80px;
     box-sizing: border-box;">
-        <span style="login_go">我已经有账号了：<a style="#58bc58" href="javascript:;" @click="getLogin">跳往登录页</a></span>
+      <span style="login_go">
+        我已经有账号了：
+        <a style="#58bc58" href="javascript:;" @click="getLogin">跳往登录页</a>
+      </span>
     </div>
   </div>
 </template>
 <script>
 export default {
+  data() {
+    return {
+      numbers: "",
+      mima: ""
+    };
+  },
   methods: {
     getLogin() {
       this.$router.push({ name: "login" });
+    },
+    register() {
+      this.$axios({
+        method: "post",
+        url: "http://39.96.28.141:3000/users/register",
+        data: this.$qs.stringify({
+          inputAccount: this.numbers,
+          inputPassword: this.mima,
+        })
+      }).then(res => {
+        console.log(res);
+      });
     }
   }
 };
 </script>
 <style scoped>
-.login{
-    /* position: absolute; */
-    bottom:0px;
-    left:0px;
-    width: 100%;
-    height: 80px;
-    background: #ccc;
-    z-index: 999;
+.login {
+  /* position: absolute; */
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 80px;
+  background: #ccc;
+  z-index: 999;
 }
 .box {
   height: 100%;
@@ -93,38 +114,37 @@ export default {
   float: right;
   padding-right: 20px;
 }
-.box .boxUl li .phone{
+.box .boxUl li .phone {
   color: rgb(95, 93, 93);
   padding-left: 10px;
-
 }
-.box .boxUl li .numbery{
-    border: 1px solid #fff;
-    height: 45px;
-    width: 40%;
-    padding-left:5px;
-    margin-top:-5px;
+.box .boxUl li .numbery {
+  border: 1px solid #fff;
+  height: 45px;
+  width: 40%;
+  padding-left: 5px;
+  margin-top: -5px;
 }
-.box .boxUl li .yzm{
-    border: 1px solid #fff;
-    height: 45px;
-    width: 40%;
-    padding-left:5px;
-    margin-top:-5px;
+.box .boxUl li .yzm {
+  border: 1px solid #fff;
+  height: 45px;
+  width: 40%;
+  padding-left: 5px;
+  margin-top: -5px;
 }
-.box .boxUl li .getm{
-    border: 1px solid #fff;
-    height: 45px;
-    padding-left:5px;
-    width: 33%;
-    font-size: 18px;
-    float: right;
-    border-radius: 5px;
+.box .boxUl li .getm {
+  border: 1px solid #fff;
+  height: 45px;
+  padding-left: 5px;
+  width: 33%;
+  font-size: 18px;
+  float: right;
+  border-radius: 5px;
 }
-.box .boxUl li .sign{
-    width: 100%;
-    height: 56px;
-    position: relative;
-    top: -5px;
+.box .boxUl li .sign {
+  width: 100%;
+  height: 56px;
+  position: relative;
+  top: -5px;
 }
 </style>

@@ -6,20 +6,20 @@
           <li class="username border-1p">
             <div class="input">
               <span class="icon">
-                <i>手机号/邮箱</i>
+                <i></i>
               </span>
               <label
                 for="username"
                 class="placeholder ng-binding"
                 ng-class="{'indent': showCcc}"
-              >手机号/邮箱</label>
-              <input type="text" class="in1">
+              ></label>
+              <input type="text" class="in1" v-model="numbers" placeholder="手机号/邮箱">
               <span
                 id="u-required"
                 aria-live="assertive"
                 class="warning ng-binding"
                 i-warning="form.username.$submitted &amp;&amp; form.username.$error.required"
-              >请输入手机号/邮箱</span>
+              ></span>
               <span
                 id="u-format-error"
                 aria-live="assertive"
@@ -37,10 +37,10 @@
           <li class="password">
             <div class="input" style="opacity: 0.618;">
               <span class="icon">
-                <i>密码</i>
+                <i></i>
               </span>
-              <label for="password" class="placeholde">密码</label>
-              <input type="password" name="password" class="in2">
+              <label for="password" class="placeholde"></label>
+              <input type="password" name="password" class="in2" v-model="mima" placeholder="密码">
               <span class="m-eye"></span>
               <span
                 id="p-required"
@@ -49,11 +49,12 @@
                 i-warning="form.password.$submitted &amp;&amp; form.password.$error.required"
               >请输入密码</span>
               <span
+                :class="{'isError':actives}"
                 id="p-error"
                 aria-live="assertive"
                 class="warning"
                 i-warning="form.password.$submitted &amp;&amp; form.password.$error.passwordValid"
-              >密码错误</span>
+              >账号或密码错误</span>
             </div>
           </li>
           <li class="remember" ng-class="{'notes': isEmbedNotes}">
@@ -83,7 +84,7 @@
             ng-class="{'disabled':form.$invalid}"
             ng-click="login()"
           >
-            <a role="button">登录</a>
+            <a role="button" @click="login">登录</a>
           </div>
         </div>
         <div class="info-wrapper clearfix">
@@ -115,9 +116,50 @@
 
 <script>
 export default {
+  data() {
+    return {
+      numbers: "",
+      mima: "",
+      actives:false
+    };
+  },
   methods: {
     getZuce() {
       this.$router.push({ name: "zuce" });
+    },
+    login() {
+      this.$axios({
+        method: "post",
+        url: "http://39.96.28.141:3000/users/login",
+        data: this.$qs.stringify({
+          inputAccount: this.numbers,
+          inputPassword: this.mima,
+        })
+      }).then(res => {
+        console.log(res.data.status);
+        let fn = {
+          success: ()=>{
+            localStorage.setItem("token",res.data.token);
+            console.log(res.data.token);
+            this.$router.push({ name: "wechat" });
+          },
+          fail:()=>{
+             this.actives= !this.actives;
+            setTimeout(()=>{
+              this.actives= !this.actives;
+            },3000)
+          }
+        }
+        fn[res.data.status]();
+        // switch (res.data.status){
+        //   case "success":
+        //   this.$router.push({ name: "wechat" });
+        //   break
+        // }
+        // if(res.data.status == "success"){
+        //   this.$router.push({ name: "wechat" });
+        // }
+      });
     }
   }
 };
@@ -251,7 +293,6 @@ span {
   top: 0px;
   left: 1px;
 }
-
 .input .warning {
   display: none;
   position: fixed;
@@ -278,7 +319,9 @@ span {
     0 1px 20px -9px rgba(0, 0, 0, 0.7);
   z-index: 100;
 }
-
+.input .isError{
+  display: block;
+}
 .password {
   width: 100%;
   height: 44px;
