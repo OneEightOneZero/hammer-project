@@ -1,17 +1,17 @@
 <template>
   <div class="main">
-    <div class="MainCar" v-for="aa in shop" :key="aa">
+    <div class="MainCar" v-for="(aa,index) in shop" :key="index">
       <input style="width:20px;height:20px;" type="checkbox">
       <img :src="aa.imgurl" width="80px">
       <div class="MainCarBox">
         <h2 v-text="aa.name"></h2>
-        <p v-text="`￥${aa.price}`"></p>
+        <p v-text="`￥${aa.price}`"></p><span class="munc" v-text="`*${aa.num}`"></span>
       </div>
     </div>
     <div class="buy">
       <input style="width:20px;height:20px;" type="checkbox">
       <p>合计：
-        <span>￥999</span>
+        <span></span>
       </p>
       <h6>免邮费</h6>
       <div>去结算</div>
@@ -58,17 +58,29 @@ export default {
     async getshop() {
       let data = await this.$axios.get("http://39.96.28.141:3000/shopCar");
       this.shop = this.shop.concat(data.data);
-      console.log(this.shop);
+      // console.log(this.shop);
     }
   },
   //生命周期函数，创建后执行created()函数
   created() {
     this.loadMore();
-    this.getshop();
-  }
+    (async()=>{
+      await this.getshop();
+      let totalPrice = 0;
+      for(let i=0;i<this.shop.length;i++){
+        totalPrice = totalPrice + (this.shop[i].num*1 + this.shop[i].price*1);
+      }
+      console.log(totalPrice);
+    })()
+  }  
 };
 </script>
 <style scoped>
+.munc{
+  position: absolute;
+  bottom: 17%;
+  right:40%;
+}
 .main {
   margin-top: 50px;
   width: 100%;
