@@ -134,18 +134,4 @@ const router = new VueRouter({
   routes // (缩写) 相当于 routes: routes
 });
 
-// 路由守卫
-router.beforeEach((to, from, next) => {
-  let token = localStorage.getItem("token");
-  // 如果token是123456的话进去目标页面，否则返回'/sign'页面
-  if (token == 123456 || to.path == '/login') {
-      next()
-  } else {
-      // console.log(to.path,from)
-      // 如果失败跳转登录页面
-      router.push({
-          name: "login"
-      })
-  }
-})
 export default router;
