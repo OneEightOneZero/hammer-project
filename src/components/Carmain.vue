@@ -53,7 +53,8 @@ export default {
       allCheck: false,
       listCheck: [],
       active: true,
-      checkNum: 0
+      checkNum: 0,
+      curuser:""
     };
   },
   methods: {
@@ -64,6 +65,7 @@ export default {
       // console.log(this.dataArr2);
     },
     async getshop(users) {
+      this.shop= [];
       let data = await this.$axios.get("http://39.96.28.141:3000/shopCar", {
         params: {
           users
@@ -81,27 +83,36 @@ export default {
           isToken: localStorage.getItem("token")
         })
       }).then(res => {
-        console.log(res.data.curuser);
-        console.log(res.data.status);
+        // console.log(res.data.curuser);
+        // console.log(res.data.status);
         let fn = {
           true: async () => {
             this.getshop(res.data.curuser);
+            this.curuser=res.data.curuser;
           },
           false: () => {}
         };
         fn[res.data.status]();
       });
     },
-    delItem(){
+    async delItem(){
       for(let j = this.shop.length-1;j>=0;j--){
         if(this.$refs[j][0].checked){
-          console.log(this.shop[j].guid);
+          let delGuid = this.shop[j].guid;
+          let delAccount = this.curuser;
+          let data = await this.$axios.get("http://39.96.28.141:3000/shopCar/delItem", {
+            params: {
+              delAccount,
+              delGuid
+            }
+          });
         }
       }
+      this.getshop(this.curuser);
     },
     iptcheck(idx) {
-      console.log(this.$refs[idx][0].checked);
-      console.log(this.shop);
+      // console.log(this.$refs[idx][0].checked);
+      // console.log(this.shop);
       for (let i = 0; i <= this.shop.length; i++) {
         if (i == idx) {
           if (this.$refs[idx][0].checked) {
@@ -120,7 +131,7 @@ export default {
       }
     },
     allmoney() {
-      console.log(this.$refs.allchecks.checked);
+      // console.log(this.$refs.allchecks.checked);
       if (this.$refs.allchecks.checked) {
         this.checkNum = this.shop.length;
         this.totalPrice = 0;
@@ -262,7 +273,7 @@ export default {
   background: linear-gradient(to top, cyan, skyblue);
   border-radius: 5px;
 }
-.buy .del{
+.buy .del {
   background: red;
   top: 5px;
   right: 19%;
