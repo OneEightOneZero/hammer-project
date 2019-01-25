@@ -66,14 +66,20 @@ export default {
     },
     async getshop(users) {
       this.shop= [];
+<<<<<<< HEAD
       this.$store.commit("editLoding",true)
+=======
+>>>>>>> 4c1ab38988185c189f74f826e264812803b9421c
       let data = await this.$axios.get("http://39.96.28.141:3000/shopCar", {
         params: {
           users
         }
       });
+<<<<<<< HEAD
       // 拿到数据再触发mutations修改loading的状态
       data?this.$store.commit("editLoding",false):null;
+=======
+>>>>>>> 4c1ab38988185c189f74f826e264812803b9421c
       this.shop = this.shop.concat(data.data);
     },
     autoLogin() {
